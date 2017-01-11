@@ -1,0 +1,11 @@
+<ul>
+  {{#each model as |note|}}
+    <li>{{link-to note.title "notes.show" note}}</li>
+  {{/each}}
+</ul>
+
+{{outlet}}
+
+<div>
+{{link-to "トップ" "index"}}
+</div>
