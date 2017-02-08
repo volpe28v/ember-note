@@ -1,0 +1,7 @@
+@import 'ember-paper';
+
+.ember-application {
+  & > .ember-view, & > .ember-view > .ember-view {
+    height: 100%;
+  }
+}
