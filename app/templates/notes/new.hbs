@@ -1,0 +1,12 @@
+{{#paper-form onSubmit="addNote" as |form|}}
+  <div class="layout-row">
+    <div class="layout-column flex-50">
+      {{form.input label="Title" value=model.title onChange=(action (mut model.title)) required=true}}
+      {{form.input label="Body" value=model.body onChange=(action (mut model.body))}}
+    </div>
+  </div>
+
+  <div class="layout-row">
+    {{#form.submit-button raised=true primary=true}}Create a note{{/form.submit-button}}
+  </div>
+{{/paper-form}}
