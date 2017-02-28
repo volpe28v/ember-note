@@ -2,16 +2,15 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model() {
-    const maxId = this.modelFor('notes')
-      .mapBy('id')
-      .sort((a, b) => b - a)[0];
-
-    return {id: String(Number(maxId || 0) + 1)};
+    return {};
   },
   actions: {
-    addNote(model){
-      this.modelFor('notes').pushObject(model);
-      this.transitionTo('notes.show', model);
+    addNote(){
+      const attrs = this.modelFor('notes.new');
+      const model = this.store.createRecord('note', attrs);
+      model.save().then(() => {
+        this.transitionTo('notes.show', model);
+      });
     }
   }
 });

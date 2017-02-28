@@ -1,7 +1,11 @@
 export default function() {
 
   // These comments are here to help you get started. Feel free to delete them.
+  this.get('/notes');
+  this.get('/notes/:id');
+  this.post('/notes');
 
+  /*
   this.get('/notes', () => {
     return {
       data: [
@@ -32,6 +36,7 @@ export default function() {
       ]
     };
   });
+  */
 
   /*
     Config (with defaults).
